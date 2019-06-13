@@ -8,8 +8,6 @@ This is a web application built with Node.js, Express and Express-handlebars.
 - Offer the searching bar to help locating the ideal restaurant.
   ![Imgur](https://i.imgur.com/g9tcC5d.png)
 
----
-
 ## Getting Started
 
 ### Prerequisites
@@ -29,10 +27,8 @@ express-handlebars v3.1.0
 2. Clone this project
 
 ```
-$ git clone
+$ git clone https://github.com/Samuel-Yeh01/ac-s3-restaurant_list.git
 ```
-
----
 
 ## Running the tests
 
@@ -57,8 +53,6 @@ $ npm run dev
 ```
 
 4. You may visit the application on browser with the URL: http://localhost:3000
-
----
 
 ## Authors
 
