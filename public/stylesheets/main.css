@@ -1,40 +1,5 @@
-header {
-  overflow: hidden;
-}
+/*
 
-.navbar .navbar-brand {
-  color: #4592af;
-}
-
-.navbar .navbar-brand:hover {
-  color: #226089;
-}
-
-.banner {
-  position: relative;
-  z-index: -1;
-  margin: -5px;
-  height: 360px;
-  background: #dddddd center center
-    url("https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5720/restaurants-list-cover.jpg");
-  background-size: cover;
-  filter: blur(3px);
-}
-
-.search-bar .search-bar-outer {
-  margin: 0 auto;
-  max-width: 680px;
-  background-color: #fce2cf;
-  border-radius: 8px;
-  padding: 20px 30px;
-  border: 0;
-  margin-top: -60px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-.search-bar .search-bar-inner h4 {
-  color: #9b4b4b;
-}
 
 .form-control::placeholder {
   color: #aaaaaa;
@@ -92,6 +57,117 @@ header {
 }
 
 @media screen and (max-width: 575px) {
+  .card img {
+    height: auto;
+  }
+} */
+
+header {
+  overflow: hidden;
+}
+
+.navbar .navbar-brand {
+  color: #4592af;
+}
+
+.navbar .navbar-brand:hover {
+  color: #226089;
+}
+
+.banner {
+  position: relative;
+  z-index: -1;
+  margin: -5px;
+  height: 360px;
+  background: #dddddd center center
+    url("https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5720/restaurants-list-cover.jpg");
+  background-size: cover;
+  filter: blur(3px);
+}
+
+.search-bar .search-bar-outer {
+  margin: 0 auto;
+  max-width: 680px;
+  background-color: #fce2cf;
+  border-radius: 8px;
+  padding: 20px 30px;
+  border: 0;
+  margin-top: -60px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar .search-bar-inner h4 {
+  font-weight: 600;
+  color: #f0f8ff;
+}
+
+.form-control::placeholder {
+  color: #aaaaaa;
+  font-size: 0.8rem;
+}
+
+.btn-major {
+  background-color: #ff7851;
+  color: white;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #ced4da;
+}
+
+.card {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card a.show-link {
+  color: #6c757d;
+}
+
+.card .a-img {
+  position: relative;
+}
+
+.card img {
+  height: 180px;
+}
+
+.card img:hover {
+  filter: brightness(50%);
+}
+
+.card .fa-eye {
+  position: absolute;
+  top: calc(50% - 1.5rem);
+  left: calc(50% - 1.5rem);
+  font-size: 3rem;
+  color: hsl(0, 0%, 90%);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.card img:hover + .fa-eye {
+  opacity: 1;
+}
+
+.card-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.restaurant-category {
+  color: #666666;
+  font-size: 0.8rem;
+}
+
+@media screen and (max-width: 992px) {
+  .card img {
+    height: 220px;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .card img {
     height: auto;
   }
