@@ -2,44 +2,40 @@
 const express = require("express");
 const app = express();
 
-// require express-handlebars here
-const exphbs = require("express-handlebars");
-const restaurantList = require("./models/restaurant.js");
-
+// 引入 db ODM
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
-const methodOverride = require("method-override");
+mongoose.connect("mongodb://localhost/restaurant", { useNewUrlParser: true });
+// mongoose 連線後透過 mongoose.connection 拿到 Connection 的物件
+const db = mongoose.connection;
+// db 連線異常
+db.on("error", () => {
+  console.log("mongodb error!");
+});
+// db 連線成功
+db.once("open", () => {
+  console.log("mongodb connected!");
+});
 
-// setting template engine
+// 引入 mongoose model
+const Restaurant = require("./models/restaurant.js");
+
+// 引入 express-handlebars & 設定 template engine
+const exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+const bodyParser = require("body-parser");
+const methodOverride = require("method-override");
 // setting static files
 app.use(express.static("public"));
-
 // 設定 bodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
 // 設定 method-override
 app.use(methodOverride("_method"));
 
-// 載入路由器
-app.use("/", require("./routes/home"));
-app.use("/todos", require("./routes/restaurant"));
-
-mongoose.connect("mongodb://localhost/restaurant", { useNewUrlParser: true }); // 設定連線到 mongoDB
-
-// mongoose 連線後透過 mongoose.connection 拿到 Connection 的物件
-const db = mongoose.connection;
-
-// 連線異常
-db.on("error", () => {
-  console.log("mongodb error!");
-});
-
-// 連線成功
-db.once("open", () => {
-  console.log("mongodb connected!");
-});
+// // 載入路由器 (從 routes 資料夾較路徑，暫時註解)
+// app.use("/", require("./routes/home"));
+// app.use("/todos", require("./routes/restaurant"));
 
 // routes setting
 app.get("/", (req, res) => {
