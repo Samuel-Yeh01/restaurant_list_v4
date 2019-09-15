@@ -17,8 +17,9 @@ db.on("error", () => {
 db.once("open", async () => {
   console.log("mongoDB is connected.");
 
-  for (const item of restaurants) {
-    await Restaurant.create(item); // 等待 mongoDB 創建完成
+  for (const obj of restaurants) {
+    await Restaurant.create(obj);
+    // 等待 mongoDB 創建完成
   }
 
   // mongoDB 創建完成後，才執行
