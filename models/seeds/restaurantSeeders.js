@@ -2,7 +2,11 @@ const mongoose = require("mongoose");
 const Restaurant = require("../restaurant.js");
 const restaurants = require("./restaurant.json").results;
 
-mongoose.connect("mongodb://localhost/restaurant", { useNewUrlParser: true });
+mongoose.connect(
+  "mongodb://localhost/restaurant",
+  { useNewUrlParser: true },
+  { useUnifiedTopology: true }
+);
 
 const db = mongoose.connection;
 
