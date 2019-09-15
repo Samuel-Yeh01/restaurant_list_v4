@@ -17,7 +17,7 @@ db.once("open", () => {
 });
 
 // 引入 mongoose model
-const Restaurant = require("./models/restaurant.js");
+const Restaurant = require("./models/restaurant");
 
 // 引入 express-handlebars & 設定 template engine
 const exphbs = require("express-handlebars");
