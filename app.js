@@ -80,10 +80,11 @@ const Restaurant = require("./models/restaurant.js");
 
 // routes setting
 app.use("/", require("./routes/home"));
-app.use("/restaurants", require("./routes/restaurant-list"));
-app.use("/search", require("./routes/search"));
-app.use("/users", require("./routes/users"));
-app.use("/auth", require("./routes/auths"));
+app.use("/restaurants", require("./routes/restaurant"));
+// 因路由設定出問題，以下先暫時註解
+// app.use("/search", require("./routes/search"));
+// app.use("/users", require("./routes/users"));
+// app.use("/auth", require("./routes/auths"));
 
 // start and listen on the Express server
 app.listen(3000, () => {
